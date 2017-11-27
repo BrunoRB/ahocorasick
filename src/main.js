@@ -6,7 +6,7 @@
     };
 
     AhoCorasick.prototype._buildTables = function(keywords) {
-        var goto = {
+        var gotoFn = {
             0: {}
         };
         var output = {};
@@ -16,13 +16,13 @@
             var curr = 0;
             for (var i=0; i<word.length; i++) {
                 var l = word[i];
-                if (goto[curr] && l in goto[curr]) {
-                    curr = goto[curr][l];
+                if (gotoFn[curr] && l in gotoFn[curr]) {
+                    curr = gotoFn[curr][l];
                 }
                 else {
                     state++;
-                    goto[curr][l] = state;
-                    goto[state] = {};
+                    gotoFn[curr][l] = state;
+                    gotoFn[state] = {};
                     curr = state;
                     output[state] = [];
                 }
@@ -35,8 +35,8 @@
         var xs = [];
 
         // f(s) = 0 for all states of depth 1 (the ones just from which 0 can directly transition)
-        for (var l in goto[0]) {
-            var state = goto[0][l];
+        for (var l in gotoFn[0]) {
+            var state = gotoFn[0][l];
             failure[state] = 0;
             xs.push(state);
         }
@@ -44,18 +44,18 @@
         while (xs.length) {
             var r = xs.shift();
             // for each symbol a such that g(r, a) = s
-            for (var l in goto[r]) {
-                var s = goto[r][l];
+            for (var l in gotoFn[r]) {
+                var s = gotoFn[r][l];
                 xs.push(s);
 
                 // set state = f(r)
                 var state = failure[r];
-                while(state > 0 && !(l in goto[state])) {
+                while(state > 0 && !(l in gotoFn[state])) {
                     state = failure[state];
                 }
 
-                if (l in goto[state]) {
-                    var fs = goto[state][l];
+                if (l in gotoFn[state]) {
+                    var fs = gotoFn[state][l];
                     failure[s] = fs;
                     output[s] = output[s].concat(output[fs]);
                 }
@@ -65,7 +65,7 @@
             }
         }
 
-        this.goto = goto;
+        this.gotoFn = gotoFn;
         this.output = output;
         this.failure = failure;
     };
@@ -75,14 +75,14 @@
         var results = [];
         for (var i=0; i<string.length; i++) {
             var l = string[i];
-            while (state > 0 && !(l in this.goto[state])) {
+            while (state > 0 && !(l in this.gotoFn[state])) {
                 state = this.failure[state];
             }
-            if (!(l in this.goto[state])) {
+            if (!(l in this.gotoFn[state])) {
                 continue;
             }
 
-            state = this.goto[state][l];
+            state = this.gotoFn[state][l];
 
             if (this.output[state].length) {
                 var foundStrs = this.output[state];
