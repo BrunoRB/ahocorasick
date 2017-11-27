@@ -4,8 +4,9 @@
 	"description": "",
 	"keywords": [
 		"aho-corasick",
-		"string searching",
-		""
+		"string-search",
+		"algorithm",
+		"string-match"
 	],
 	"homepage": "https://brunorb.github.io/ahocorasick",
 	"license": "MIT",
