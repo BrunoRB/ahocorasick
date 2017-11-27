@@ -12,6 +12,14 @@ AhoCorasick.prototype.search = function(string) {
 
 var testCases = [
 	{
+		keywords: ['keyword1', 'keyword2', 'etc'],
+		text: 'should find keyword1 at position 19 and keyword2 at position 30.',
+		expected: [
+			[19, ['keyword1']],
+			[47, ['keyword2']]
+		]
+	},
+	{
 		keywords: ['he', 'she', 'his', 'hers'],
 		text: 'she was expecting his visit',
 		expected: [
