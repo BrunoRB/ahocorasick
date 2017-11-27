@@ -1,0 +1,26 @@
+{
+	"parserOptions": {
+		"ecmaVersion": 6
+	},
+	"extends": "eslint:recommended",
+	"rules": {
+		"no-console": 2,
+		"no-unused-vars": 2,
+		"radix": [2, "always"],
+		"block-scoped-var": 0,
+		"no-redeclare": 0,
+		"consistent-return": 2,
+		"curly": 2,
+		"no-return-assign": 2,
+		"no-void": 2,
+		"no-with": 2,
+		"no-shadow": 2
+	},
+	"globals": {
+	},
+	"env": {
+		"node": true,
+		"browser": true
+	},
+	"root": true
+}

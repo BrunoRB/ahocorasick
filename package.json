@@ -1,0 +1,29 @@
+{
+	"name": "ahocorasick",
+	"version": "1.0.0",
+	"description": "",
+	"keywords": [
+		"aho-corasick",
+		"string searching",
+		""
+	],
+	"homepage": "https://brunorb.github.io/ahocorasick",
+	"license": "MIT",
+	"author": {
+		"name": "Bruno Roberto Búrigo",
+		"url": "https://coderoftomorrow.com"
+	},
+	"main": "src/main.js",
+	"browser": "src/main.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BrunoRB/ahocorasick"
+	},
+	"scripts": {
+		"test": "node_modules/.bin/eslint -c .eslintrc.json src/ ; node_modules/.bin/mocha test/"
+	},
+	"devDependencies": {
+		"eslint": "latest",
+		"mocha": "latest"
+	}
+}
