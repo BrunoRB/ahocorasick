@@ -28,7 +28,7 @@
                 }
             }
 
-            output[state].push(word);
+            output[curr].push(word);
         });
 
         var failure = {};
