@@ -12,6 +12,25 @@ AhoCorasick.prototype.search = function(string) {
 
 var testCases = [
 	{
+		keywords: ['hero', 'heroic'],
+		text: 'hero',
+		expected: [
+			[3, ['hero']]
+		]
+	},
+	{
+		keywords: ['hero', 'heroic', 'heroism'],
+		text: 'the hero performed a heroic act of heroism',
+		expected: [
+			// "hero" is a substring of "heroic" and "heroism", so we should find it 3 times
+			[7, ['hero']],
+			[24, ['hero']],
+			[26, ['heroic']],
+			[38, ['hero']],
+			[41, ['heroism']]
+		]
+	},
+	{
 		keywords: ['keyword1', 'keyword2', 'etc'],
 		text: 'should find keyword1 at position 19 and keyword2 at position 30.',
 		expected: [
