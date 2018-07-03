@@ -24,6 +24,8 @@ or for browsers:
 
 check [test/basic.js](test/basic.js) for more examples.
 
+PS. Note that what's returned is the index of the **last characters** of the found keywords.
+
 ## License
 
 [The MIT License](LICENSE)
