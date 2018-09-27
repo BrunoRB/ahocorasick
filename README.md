@@ -1,6 +1,6 @@
 # ahocorasick
 
-Implementation of the Aho-Corasick string searching algorithm described in the paper
+Implementation of the Aho-Corasick string searching algorithm, as described in the paper
 "Efficient string matching: an aid to bibliographic search".
 
 ## Installing / Running
