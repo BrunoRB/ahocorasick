@@ -1,6 +1,6 @@
 {
-  "name": "ahocorasick",
-  "version": "1.0.1",
+  "name": "ahocorasick-visualization",
+  "version": "1.0.0",
   "description": "",
   "keywords": [
     "aho-corasick",
@@ -20,11 +20,8 @@
     "type": "git",
     "url": "https://github.com/BrunoRB/ahocorasick"
   },
-  "scripts": {
-    "test": "node_modules/.bin/eslint -c .eslintrc.json src/ ; node_modules/.bin/mocha test/"
-  },
-  "devDependencies": {
-    "eslint": "latest",
-    "mocha": "latest"
+  "dependencies": {
+    "d3": "^5.7.0",
+    "dagre-d3": "^0.6.1"
   }
 }

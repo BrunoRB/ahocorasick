@@ -1,0 +1,101 @@
+<!DOCTYPE html lang="en">
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>first-follow</title>
+	<meta name="description" content="Aho corasick">
+	<style>
+		body {
+			font-size: large;
+		}
+		svg {
+			width: 100%;
+			height: 70%;
+			overflow: hidden;
+			border: 1px solid black;
+			border-radius: 5px;
+			margin-top: 1%;
+		}
+
+		g.type-TK > circle {
+			fill: #00ffd0;
+		}
+
+		.node circle {
+			stroke: #999;
+			fill: #fff;
+			stroke-width: 1.5px;
+		}
+
+		.edgePath path {
+			stroke: #333;
+			stroke-width: 1.5px;
+		}
+
+		span.fail {
+			color: red;
+		}
+		span.match {
+			color: green;
+		}
+		#status {
+			margin-top: 1%;
+		}
+		#tables table {
+			display: inline;
+			margin: 5%;
+		}
+		input[type="range"] {
+			direction: rtl;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>AhoCorasick</h1>
+	</header>
+	<div>
+		<div>
+			<label>Keywords (comma separated):<br>
+			<input id="keywords" type="slider" value="he,she,his,hers" title="Comma separeted list of keywords that we are searching for" /></label> <br>
+			<label for="text">Text:</label> <br>
+			<textarea id="text" cols="40" title="Text where we are searching for the keywords">ushers</textarea> <br>
+			<label>Speed: <br><input type="range" title="Running speed" value="80" min="30" max="100" /></label> <br>
+			<button type="button">Run</button>
+			<div id="status">
+				<pre id="text-pre"></pre>
+				Current state: <span id="current-state">0</span> <br>
+				Keywords found: <span id="found"></span>
+			</div>
+			<svg id="goto-function"><g></g></svg>
+			<div id="tables">
+				<table id="failure-function">
+					<caption>Failure function</caption>
+					<thead>
+						<th>i</th>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+				<table id="output-function">
+					<caption>Output function</caption>
+					<thead>
+						<th>i</th>
+						<th>output(i)</th>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script src="visualization/node_modules/d3/dist/d3.js"></script>
+	<script src="visualization/node_modules/dagre-d3/dist/dagre-d3.min.js"></script>
+	<script src="src/main.js"></script>
+	<script src="visualization/vis.js"></script>
+</body>
+
+</html>
