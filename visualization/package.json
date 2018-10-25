@@ -2,24 +2,6 @@
   "name": "ahocorasick-visualization",
   "version": "1.0.0",
   "description": "",
-  "keywords": [
-    "aho-corasick",
-    "string-search",
-    "algorithm",
-    "string-match"
-  ],
-  "homepage": "https://brunorb.github.io/ahocorasick",
-  "license": "MIT",
-  "author": {
-    "name": "Bruno Roberto Búrigo",
-    "url": "https://brunorb.com"
-  },
-  "main": "src/main.js",
-  "browser": "src/main.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BrunoRB/ahocorasick"
-  },
   "dependencies": {
     "d3": "^5.7.0",
     "dagre-d3": "^0.6.1"
