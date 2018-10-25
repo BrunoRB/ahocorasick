@@ -43,7 +43,7 @@
 		}
 		prev = null;
 		allFound = [];
-		text.value = (sstorage.getItem('text') || '').trim();
+		text.value = (sstorage.getItem('text') || text.value || 'ushers').trim();
 		keywords.value = (sstorage.getItem('keywords') || 'he,she,his,hers').trim();
 		currentS.innerHTML = '';
 		found.innerHTML = '';
