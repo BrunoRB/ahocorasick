@@ -26,6 +26,10 @@ check [test/basic.js](test/basic.js) for more examples.
 
 PS. Note that what's returned is the index of the **last characters** of the found keywords.
 
+## Visualization
+
+See [https://brunorb.github.io/ahocorasick/visualization.html](https://brunorb.github.io/ahocorasick/visualization.html) for an interactive visualization of the algorithm.
+
 ## License
 
 [The MIT License](LICENSE)
