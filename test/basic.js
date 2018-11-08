@@ -93,6 +93,13 @@ var testCases = [
 			[7, ['°□°']],
 			[14, ['┻━┻']],
 		]
+	},
+	{
+		keywords: ['.com.au','.com'],
+		text: 'www.yahoo.com',
+		expected: [
+			[12, ['.com']]
+		]
 	}
 ].map(function(ts) {
 	ts.expected = ts.expected.map(function(expected) {
