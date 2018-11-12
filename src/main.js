@@ -28,13 +28,13 @@
                 }
             }
 
-            output[state].push(word);
+            output[curr].push(word);
         });
 
         var failure = {};
         var xs = [];
 
-        // f(s) = 0 for all states of depth 1 (the ones just from which 0 can directly transition)
+        // f(s) = 0 for all states of depth 1 (the ones from which the 0 state can transition to)
         for (var l in gotoFn[0]) {
             var state = gotoFn[0][l];
             failure[state] = 0;
