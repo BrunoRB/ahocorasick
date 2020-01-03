@@ -23,6 +23,9 @@
   "scripts": {
     "test": "node_modules/.bin/eslint -c .eslintrc.json src/ ; node_modules/.bin/mocha test/"
   },
+  "files": [
+    "src/main.js"
+  ],
   "devDependencies": {
     "eslint": "latest",
     "mocha": "latest"
