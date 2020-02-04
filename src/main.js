@@ -36,7 +36,7 @@
 
         // f(s) = 0 for all states of depth 1 (the ones from which the 0 state can transition to)
         for (var l in gotoFn[0]) {
-            var state = gotoFn[0][l];
+            state = gotoFn[0][l];
             failure[state] = 0;
             xs.push(state);
         }
@@ -49,7 +49,7 @@
                 xs.push(s);
 
                 // set state = f(r)
-                var state = failure[r];
+                state = failure[r];
                 while(state > 0 && !(l in gotoFn[state])) {
                     state = failure[state];
                 }
